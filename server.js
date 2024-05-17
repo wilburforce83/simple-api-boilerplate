@@ -27,16 +27,23 @@ const apiKeyMiddleware = (req, res, next) => {
 };
 
 // Apply the API key middleware to the routes that need protection
-app.use("/protected-route", apiKeyMiddleware);
+app.use("/auth", apiKeyMiddleware);
 
-// GET request to retrieve all users
+
+
+/*
+
+// GET request to retrieve all users (unprotected)
+
 app.get("/data", (req, res) => {
   let result = db.JSON();
   res.json(result);
 });
 
-// Protected route example
-app.get("/protected-route/data", (req, res) => {
+*/
+
+// API Key route example
+app.get("/auth/data", (req, res) => {
   let result = db.JSON(); // Example of accessing data with API key protection
   res.json(result);
 });
