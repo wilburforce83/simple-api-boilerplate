@@ -5,13 +5,12 @@ const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 const JSONdb = require("simple-json-db");
-
-// troubleshooting .env
-console.log('process.env:', process.env);
-
+const logGETRequests = require('./logging/requestLogger');
 
 // Enable CORS for all routes
 app.use(cors());
+// Enable logging to all routes
+app.use(logGETRequests);
 
 // Middleware to parse JSON bodies
 app.use(express.json());

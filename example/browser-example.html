@@ -12,6 +12,7 @@
   <script>
     // Function to fetch users from the API
     async function getDB() {
+      console.log("get db has been triggered")
       try {
         const apiKey = "1234"; // Replace "your-api-key" with your actual API key
         const response = await fetch('http://localhost:3000/auth/data', {

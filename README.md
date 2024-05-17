@@ -72,4 +72,9 @@ npm start
 
 - This repository is a public template and can be used and modified freely.
 - The API key is required for accessing protected routes.
+- The file `/b/db.json` contains a large object of demo data sourced from https://github.com/json-iterator/test-data/blob/master/large-file.json for you to play around with until you have your own data to work with.
+
+## License
+
+This project is licensed under the GNU General Public License v2.0 (GNU GPLv2) - see the [LICENSE](LICENSE) file for details.
 
