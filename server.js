@@ -1,9 +1,14 @@
 // server.js
 const express = require("express");
+require('dotenv').config();
 const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 const JSONdb = require("simple-json-db");
+
+// troubleshooting .env
+console.log('process.env:', process.env);
+
 
 // Enable CORS for all routes
 app.use(cors());
@@ -16,6 +21,8 @@ const db = new JSONdb("./db/db.json");
 
 // Define your API key
 const apiKey = process.env.API_KEY;
+
+console.log('API_KEY;',apiKey);
 
 // Middleware to check API key
 const apiKeyMiddleware = (req, res, next) => {
