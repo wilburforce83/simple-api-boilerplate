@@ -15,7 +15,7 @@ app.use(logGETRequests);
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Example data (could be replaced with a database)
+// simple JSON data store - acts as the database
 const db = new JSONdb("./db/db.json");
 
 // Define your API key
@@ -34,8 +34,6 @@ const apiKeyMiddleware = (req, res, next) => {
 
 // Apply the API key middleware to the routes that need protection
 app.use("/auth", apiKeyMiddleware);
-
-
 
 /*
 
